@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.backgroundContainer{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 850px;
+  background-image: url(background.jpg)
+}
+
+h2 {
+  margin: 0;
+  padding: 15px 0 15px 0;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.loginContainer{
+  border: 3px solid #f1f1f1;
+  margin: 0 20px 0 20px;
+  width: 60%;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.submitBtn{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.imgContainer{
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar{
+  width: 25%;
+  border-radius: 50%;
+}
+
+.container{
+  padding: 16px;
+}
+
+.containerRegistration{
+  background-color: #f1f1f1;
+  padding: 16px 3px 16px 3px;
+  width: 60%;
+  margin: 0 20px 62px 20px;
+}
+
+.containerRegistration p{
+  padding-left: 16px;
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+}
+
+.headerLinks{
+  margin: 0 15px 0 15px;
+  color: white;
+}
+
+.backgroundContainerTodo{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(avengers.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todoContainer{
+  width: 70%;
+}
+
+.addTodo{
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid white;
+  background: none;
+  padding: 10px;
+  outline: none;
+  font-size: 20px;
+  color: white;
+}
+
+.addTodo::placeholder{
+  color: white;
+}
+
+li{
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 12px;
+  margin: 7px 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+}
+
+li:hover{
+  opacity: 0.8;
+}
+
+li img{
+  cursor: pointer;
+  width: 25px;
+}
+
+.backgroundContainerTodo button{
+  background-color: #0052cc;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
