@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router,Route, Link, Redirect } from "react-router-dom";
 import {token$, updateToken} from './store';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import jwt from 'jsonwebtoken';
 import Header from './Header'
 
@@ -25,15 +26,17 @@ class Todos extends React.Component{
       this.setState({token})
     });
     const decoded = jwt.decode(this.state.token);
-    this.setState({email: decoded.email});
+
+    if(decoded){
+      this.setState({email: decoded.email});
+    }
+
     axios.get('http://3.120.96.16:3002/todos',{
       headers: {
         Authorization: `Bearer ${this.state.token}`
       }
     })
     .then((response)=>{
-      console.log(response.data.todos);
-      console.log(this.state.email);
       this.setState({todos: response.data.todos})
     }).catch((error)=>{
       console.log(error);
@@ -107,9 +110,13 @@ class Todos extends React.Component{
           </form>
           <div>
             <ul>
-              {this.state.todos.map( list =>(
-                <li key={list.id}>{list.content}<img data-id={list.id} onClick={this.onDelete} src="images/delete.png" /></li>
-              ))}
+              <TransitionGroup>
+                {this.state.todos.map( list =>(
+                  <CSSTransition key={list.id} classNames='todo' timeout={700}>
+                    <li key={list.id}>{list.content}<img data-id={list.id} onClick={this.onDelete} src="images/delete.png" /></li>
+                  </CSSTransition>
+                ))}
+              </TransitionGroup>
             </ul>
           </div>
         </div>

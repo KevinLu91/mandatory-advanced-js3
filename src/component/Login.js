@@ -39,6 +39,9 @@ class Login extends React.Component{
 
   componentDidMount() {
     this.subscription = token$.subscribe((token) => this.setState({ token }));
+    if(this.state.token){
+      alert('You are still logged in, please sign out first!')
+    }
   }
 
   componentWillUnmount() {

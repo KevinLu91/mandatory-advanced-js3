@@ -140,3 +140,25 @@ li img{
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.todo-enter{
+  opacity: 0;
+  transform: translateX(-1000px);
+}
+
+.todo-enter-active{
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.7s;
+}
+
+.todo-exit{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.todo-exit-active{
+  opacity: 0;
+  transform: translateX(1000px);
+  transition: all 0.7s;
+}
