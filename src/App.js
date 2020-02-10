@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Todos from './component/Todos';
 import Login from './component/Login';
 import Registration from './component/Registration';
-import { BehaviorSubject } from 'rxjs';
-import { BrowserRouter as Router,Route, Link } from "react-router-dom";
+
+import { BrowserRouter as Router,Route } from "react-router-dom";
 
 class App extends React.Component {
   render(){

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router,Route, Link, Redirect } from "react-router-dom";
+import {Link, Redirect } from "react-router-dom";
 import {token$, updateToken} from './store';
 import Header from './Header'
 
@@ -29,8 +29,7 @@ class Login extends React.Component{
     },
   )
     .then((response)=>(
-      updateToken(response.data.token),
-      console.log(response.data.token)
+      updateToken(response.data.token)
     ))
     .catch((error) =>(
       alert(error)
@@ -64,7 +63,6 @@ class Login extends React.Component{
           <div className='imgContainer'>
             <img src="images/thor.jpg" className='avatar'/>
           </div>
-
           <div className="container">
             <label><b>Username</b></label>
             <input

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router,Route, Link, Redirect } from "react-router-dom";
-import {token$, updateToken} from './store';
+import { Link, Redirect } from "react-router-dom";
+import {token$} from './store';
 import Header from './Header';
 
 class Registration extends React.Component{

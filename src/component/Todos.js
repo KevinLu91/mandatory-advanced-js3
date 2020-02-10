@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router,Route, Link, Redirect } from "react-router-dom";
+import {Redirect } from "react-router-dom";
 import {token$, updateToken} from './store';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import jwt from 'jsonwebtoken';
