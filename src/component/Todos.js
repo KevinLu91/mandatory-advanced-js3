@@ -39,7 +39,6 @@ class Todos extends React.Component{
     .then((response)=>{
       this.setState({todos: response.data.todos})
     }).catch((error)=>{
-      console.log(error);
       updateToken(null)
     })
   }
@@ -71,8 +70,9 @@ class Todos extends React.Component{
       }
     })
     .then((response) =>(
-      this.getTodos(),
       this.setState({content: ''})
+    )).then((data) =>(
+      this.getTodos()
     )).catch((error) =>(
       alert(error)
     ))
@@ -88,7 +88,7 @@ class Todos extends React.Component{
       this.getTodos()
     ))
     .catch((error) =>(
-      console.log(error)
+      alert(error)
     ))
   }
 
@@ -113,7 +113,7 @@ class Todos extends React.Component{
               <TransitionGroup>
                 {this.state.todos.map( list =>(
                   <CSSTransition key={list.id} classNames='todo' timeout={700}>
-                    <li key={list.id}>{list.content}<img data-id={list.id} onClick={this.onDelete} src="images/delete.png" /></li>
+                    <li key={list.id}>{list.content}<img data-id={list.id} onClick={this.onDelete} src="images/delete.png" alt='Avengers'/></li>
                   </CSSTransition>
                 ))}
               </TransitionGroup>

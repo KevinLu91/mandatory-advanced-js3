@@ -61,7 +61,7 @@ class Login extends React.Component{
         <Header />
         <form className="loginContainer" onSubmit={this.onSubmit}>
           <div className='imgContainer'>
-            <img src="images/thor.jpg" className='avatar'/>
+            <img src="images/thor.jpg" className='avatar' alt='Thor icon'/>
           </div>
           <div className="container">
             <label><b>Username</b></label>
